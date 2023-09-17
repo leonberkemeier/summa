@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyList</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #333399, #ff00cc);
+            margin: 0px;
+            opacity: .7;
+
+        }
+
+        header{
+            text-shadow:1px 1px rgb(0, 0, 0);
+            font-size:20px;
+            font-family: 'Open Sans', sans-serif;
+            /* background-color:  	rgba(51, 59, 153, 1); */
+            background: linear-gradient(to right, #333399, #ff00cc);
+            /* display: flex; */
+            padding-left: 0px;
+            /* box-shadow: 0px 5px 5px rgb(109,0,204); */
+            color:rgb(241, 236, 236);
+            position: sticky;
+            top:0; left: 0; right:0;
+            z-index: 100;
+            border-radius:5px;
+            border-bottom: 1px solid rgba(0,0,0,0.5);
+        }
+        .add_button{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px rgb(black);
+            background-color: #333399;
+            border: unset;
+            font-size:32px;
+            color:black;
+            position: fixed;
+            right: 20px;
+            bottom:20px;
+            border: 1px;
+
+        
+        
+        }
+        h1{
+            text-align:center;
+            
+        }
+        .list_item{
+            font-size:20px;
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgb(141, 151, 150);
+            height: 60px;
+            border-radius:2px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgba(0,0,0,0.5);
+            border-left: 1px solid rgba(0,0,0,0.5);
+            border-right: 1px solid rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(0,0,0,0.5);
+        
+
+        }
+        .logout_button{
+            border-top: 1px solid rgba(0,0,0,0.5);
+            border-left: 1px solid rgba(0,0,0,0.5);
+            border-right: 1px solid rgba(0,0,0,0.5);
+            height: 30px;
+            width: 60px;
+            border-radius:2px;
+            /* border-radius: 50%; */
+            box-shadow: 2px 2px 2px rgb(black);
+            background-color:#333399;
+            color: white !important;
+            
+            border: unset;
+            font-size:10px;
+            color:black;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+
+
+        }
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    }
+
+.list_item {
+    order: 0;
+    flex: 1 0 auto;
+    align-self: center;
+    width:100%;
+    max-width: 400px;
+    text-align:center;
+
+    }
+
+    
+
+.ka {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    
+    }
+
+
+.center-Einkauf{
+    margin:auto;
+    position:relative; right : 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+    width: 100%;
+}
+.button{
+    font-size:20px;
+    font-family: 'Open Sans', sans-serif; 
+    align-items: center;
+      
+}
+.backbtn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: rgb(166, 166, 166);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transform-origin: top center;
+  text-align: center;
+  font-size: 40px;
+  left: 2%;
+  top: 115px;
+  outline: 3px outset #333399;
+  cursor: pointer;
+  opacity: 1;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  filter: drop-shadow(0 0 2px #333399);
+}
+
+        
+    </style>
+
+</head>
+
+<body>
+    <header>
+        
+        <h1 style = "display : inline-block; width  :  100%" >ToDoList</h1>
+        <br>
+        <button class="logout_button" onclick="logout()">
+            Logout
+        </button>
+        
+    </header>
+    <div class = "flex-container">
+    {% for row in all_items %}
+    <div class="list_item">
+        <div class = "center-Einkauf">
+            <input class = "ka" type ="checkbox"> </input>
+            <div class = "ka">
+                {{row.name}}
+            </div>
+            
+            <button class = "ka" onclick="removeItem('{{row.id}}')">
+                Gekauft 
+            </button>
+        </div>
+        
+    </div>
+
+    {% endfor %}
+</div>
+    
+    <button class="add_button" onclick="addItem()">
+        +
+    </button>
+    <br>
+    
+   <a href="/"><button class="backbtn"><ion-icon name="play-back-outline"></ion-icon></button></a> 
+    
+    <script>
+        function addItem() {          
+            let itemName = prompt("neues Element Hinzufügen")
+            let token = '{{ csrf_token }}';
+            let formData = new FormData();
+            formData.append('itemName', itemName);
+            formData.append("csrfmiddlewaretoken", token);
+            
+            fetch('/mylist', {
+                method:'POST',
+                body: formData
+            }).then(function(){window.location.reload()});
+         
+        }
+        function removeItem(itemID){
+
+            let token = '{{ csrf_token }}';          
+ 
+            // Einem Namen wird eine ID zugehordnet.. daher zu removen keinen Namen sondern ID.. daher nur anfrage zur ID schicken        
+            // Delete geht immer and eine ID und nicht an einen Namen
+            // im Java Land ist $ zum bennen des WErtes der ID - f-string in python
+           
+            fetch(`/mylist/${itemID}`, {
+                method:'DELETE',
+                headers: {'X-CSRFToken' : token}
+            }).then(function(){window.location.reload()});
+
+        }
+
+        function logout(){
+            let token = '{{ csrf_token }}';
+            fetch("/logout" , {
+                
+                method:'POST',
+                headers: {'X-CSRFToken' : token}
+            }).then(function(){window.location.href = '/';});
+                
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fourth</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
+    
+</head>
+<body>
+
+    <!--  ---- Header -----  -->
+    
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                Leon
+            </a>
+       
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            home
+                        </a>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">
+                            projects                        
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            skills 
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#photography" class="nav__link">
+                            photography                 
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav__buttons">
+                    <!-- <a href="#" class="nav__button-link">logins</a> -->
+                    <a href="#" class="nav__button-ghost">Lets Connect</a>
+                </div>
+                <!-- closebtn -->
+                <div class="nav__close" id="nav-close">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- togle btn -->
+            <div class="nav__toggle" id="nav-toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </nav>
+        
+        
+    </header>
+
+<!--------------- home sesction ---------- -->
+
+<section class="home view" id="home">
+   
+    <div class="highlights">
+        <div class="cols cols0">
+            <span class="topline">Hey</span>
+            <br>
+            <h1>I'm <span class="multiText">Leon</span></h1>
+            <br>
+            <br>
+            <p> I am currently studying chemistry and chemical engineering and I really like to write some code and take some pictures im my freetime.</p>
+            
+        </div>
+        
+        
+        <div class="cols cols1">
+            <div class="imgbox">
+                <img class="splash" src="/media/images/splash3.png" id="splash">
+                <img class="profile" src="/media/images/img4.png">
+                <!-- splashes -->
+                <!-- https://www.pngall.com/de/paint-splash-png -->
+            </div>
+        </div>
+        
+        <div class="btns">
+            <a href="cv.pdf"><button>download cV</button></a>            
+            <button>lets connect</button>
+        </div>
+    </div>
+   
+    
+
+<div class="banner"></div>
+
+    
+</section>
+
+
+    <!-- ------- section projects ---------- -->
+
+    <section class="projects view" id="projects">
+        <div class="main">
+            <h2><span>My</span> Project<span>s</span></h2>
+            <h6>In the following I want to give the <span>Reader</span> a list of Projects I finished.</h6>
+        </div>
+        <div class="content">
+            <div class="cols">
+                <ul class="project__list">
+
+                    <li class="project_list_item">
+                        <p><b>My</b> first project was a basic to-do-list, which was designed to be a Mischung aus shopping und to-do-list.</p>
+                        <a href="#">mehr</a>  
+                    </li>
+
+                    <li class="project_list_item">
+                        <p><b>The</b> second project was a flash-card-style web application in which you were supposed to be able to create projects and to upload flash-cards ment for learning new skills. Additionally I added a document-scanner using CV2.</p>
+                    <a href="#">mehr</a>  
+                    </li>
+
+                    <li class="project_list_item">
+                        <p><b>Third</b> project was a Web-Scraping tool in which I used Scrapy. It was to yield prices and if a big Sale was to send me an Email.</p>
+                        <a href="#">mehr</a>  
+                    </li>
+
+                    <li class="project_list_item">
+                        <p><b>Fourth</b> was this website in which I wanted to display my skill, projects and combine all past projects into one big project.</p>
+                        <a href="#">mehr</a>  
+                    </li>
+                </ul>
+
+                <!-- <div class="project">
+                    <p><b>M</b>y first project was a basic to-do-list, which was designed to be a Mischung aus shopping und to-do-list.</p>
+                    <a href="#">mehr</a>    
+                </div>
+
+                <div class="project">
+                    <p><b>T</b>he second project was a flash-card-style web application in which you were supposed to be able to create projects and to upload flash-cards ment for learning new skills.</p>
+                    <a href="#">mehr</a>    
+                </div> -->
+
+            </div>
+            <div class="cols">
+                <div class="box">
+                    
+                    <img src="/media/images/img99.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ------- skills -------------- -->
+
+    <section class="skills views" id="skills">
+        
+        <div class="main">
+            <h2><span>My</span> Skills</h2>
+            <h6>Here I want to show <span>you</span> some <span>Skills</span> I aquired over time and some <span>courses</span> I took.</h6>
+        </div>
+
+        <div class="progressBoxs grid">
+<!-- skills -->
+            <div class="grid_skills">
+
+                <h1>Skills</h1>
+
+                <div class="skillsItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>HTML</span>
+                            <span>90% <ion-icon name="chevron-down-outline"></ion-icon></span>
+    
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 90%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+                
+                <div class="skillsItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>CSS</span>
+                            <span>80% <ion-icon name="chevron-down-outline"></ion-icon></span>
+    
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 80%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+                
+                <div class="skillsItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>SQLite</span>
+                            <span>40% <ion-icon name="chevron-down-outline"></ion-icon></span>
+    
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 40%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+    
+                </div>
+                
+                <div class="skillsItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>Python</span>
+                            <span>75% <ion-icon name="chevron-down-outline"></ion-icon></span>
+    
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 74%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+                
+                <div class="skillsItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>JavaScript</span>
+                            <span>10% <ion-icon name="chevron-down-outline"></ion-icon></span>
+    
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 10%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+<!-- courses -->
+            <div class="grid_courses">
+
+                <h1>Courses</h1>
+
+                <div class="courseItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>Course-1</span>
+                            <span>90% <ion-icon name="chevron-down-outline"></ion-icon></span>
+    
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 90%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+
+                
+                <div class="courseItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>Course-2</span>
+                            <span>90%  <ion-icon name="chevron-down-outline"></ion-icon></span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 90%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+                
+                <div class="courseItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>Course-3</span>
+                            <span>90%  <ion-icon name="chevron-down-outline"></ion-icon></span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 90%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>sum shit to display</p>
+                    </div>
+                </div>
+
+                
+                <div class="courseItem">
+                    <button type="button" class="collapsible">
+                        <div class="progress_name">
+                            <span>Course-4</span>
+                            <span>90%  <ion-icon  name="chevron-down-outline"></ion-icon></span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress_bar" style="width: 90%;"></div>
+                        </div>
+                    </button>
+    
+                    <div class="content">
+                        <p>this course does this and that and is really nice because</p>
+                        <br>
+                        <a href="#">Course4-quick-link</a>
+                    </div>
+                </div>
+                
+            </div>            
+        </div>
+
+        <div class="banner2"></div>
+    </section>
+
+    <!-- ------- section photography ------ -->
+
+    <section class="photography view" id="photography">
+        <div class="main">
+            <h2><span>P</span>hotograph<span>y</span></h2>
+            <h6>For the last one is just sum pictures i took.</h6>
+        </div>
+
+         <!-- --- start image slider --- -->
+         <div class="photography-container">
+
+                <div class="slider">
+                    <div class="slides">
+                        <!-- radio button start -->
+                        <input type="radio" name="radio-btn" value="" id="radio1">
+                        <input type="radio" name="radio-btn" value="" id="radio2">
+                        <input type="radio" name="radio-btn" value="" id="radio3">
+                        <input type="radio" name="radio-btn" value="" id="radio4">
+                        <input type="radio" name="radio-btn" value="" id="radio5">
+                        <!-- radio button end -->
+                        <!-- --- slide images start -->
+                        <div class="slide first">
+                            <img src="/media/images/1.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/media/images/2.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/media/images/3.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/media/images/4.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="/media/images/5.jpg" alt="">
+                        </div>
+                        <!-- slide images end --- -->
+                        <!-- automatic nav start -->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                        </div>
+                        <!-- automatic nav end -->
+                    </div>
+                    <!-- manual nav start -->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
+                    </div>
+
+                    <!-- manual nav end -->
+                </div>
+            </div>
+
+    <!-- --- end image slider --- -->
+            <div class="photography-txt">
+                <div class="txtt">
+                    <h6>If you like these pictures already feel free to check out my instagram and my VSCO for further pictures. </h6>
+            
+                </div>
+            </div>  
+
+            
+                
+
+        
+    </section>
+    
+
+    <div class="icons">
+        <i class="fa fa-vsco"><ion-icon name="camera-outline"></ion-icon><a class="icon-link" href="./">VSCO</a></i>
+        <i class="fa fa-insta"><ion-icon name="logo-instagram"></ion-icon><a class="icon-link" href="./">Instagram</a></i>
+        <i class="fa fa-linkedin"><ion-icon name="logo-linkedin"></ion-icon><a class="icon-link" href="./">LinkedIn</a></i>
+        <i class="fa fa-github"><ion-icon name="logo-github"></ion-icon><a class="icon-link" href="./">GitHub</a></i>
+    </div>
+
+    <!-- ====== footer ===== -->
+
+    <footer>
+        <div class="footer-col">
+            <h4>Projects</h4>
+            <ul>
+                <li><a href="#">ToDoList</a></li>
+                <li><a href="#">FlashCards</a></li>
+                <li><a href="#">DocumentScanner</a></li>
+                <li><a href="#">WebScraper</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>network</h4>
+            <ul>
+                <li><a href="#">technology</a></li>
+                <li><a href="#">science</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">API</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Me</h4>
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">legal</a></li>
+                <li><a href="#">contact</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>follow me</h4>
+            <div class="links">
+                <a href="#"><ion-icon name="camera-outline"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    
+    <script>
+
+// ===== Multitext ======
+var typingEffect = new Typed (".multiText",{
+    strings:["Coder","Leon","Showman","entertainer"],
+    loop: true,
+    typeSpeed: 200,
+    backSpeed: 300,
+    backDelay: 1500,
+});
+
+
+
+
+ /*=============== SHOW MENU ===============*/
+ const navMenu = document.getElementById('nav-menu'),
+ navToggle = document.getElementById('nav-toggle'),
+ navClose = document.getElementById('nav-close')
+
+/*===== MENU SHOW =====*/
+/* Validate if constant exists */
+if(navToggle){
+ navToggle.addEventListener('click', () =>{
+     navMenu.classList.add('show-menu')
+ })
+}
+
+/*===== MENU HIDDEN =====*/
+/* Validate if constant exists */
+if(navClose){
+ navClose.addEventListener('click', () =>{
+     navMenu.classList.remove('show-menu')
+ })
+};
+
+
+// ====== Collapsibles =====
+
+
+var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    };
+
+
+// ==== Image slider ====
+
+var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio'+counter).checked=true;
+            counter++;
+            if(counter>5){
+                counter=1;
+            }
+        }, 5000);
+
+    </script>
+
+    </body>
+</html>
