@@ -14,7 +14,6 @@ def one(request):
 #####################################
 # first project todolist
 
-
 def mylist(request):
     if request.method == 'POST':
         print('Received data: ', request.POST['itemName'])
@@ -28,5 +27,28 @@ def removeitem(request, * ,id):
     print('Received data: ', id)
     ShoppingItem.objects.filter(id=id).delete()
 
+####################################
+
+
+#docuscanner
+####################################
+
+def docuscanner(request):
+    return render(request, 'docuscanner.html')
 
 ####################################
+
+
+#scraper
+####################################
+def scraper(request):
+    return render(request, 'scraper.html')
+####################################
+
+
+#flashcards
+####################################
+def upload(request):
+    return render(request,"upload.html")
+####################################
+

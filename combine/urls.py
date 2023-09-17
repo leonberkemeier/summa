@@ -9,7 +9,7 @@ from . import views
 
 urlpatterns = [
     #mainpage
-    path('', views.home),
+    path('', views.home, name="home"),
     
     # path('', views.loginPage, name="login"),
     path('one', views.one),
@@ -18,7 +18,13 @@ urlpatterns = [
     #todolist
     path('mylist', views.mylist, name="mylist"),
     path('mylist/<int:id>', removeitem),
+    
+    
+    #flashcards
+    path('upload', views.upload, name="upload"),
 
+    #scraper
+    path('scraper', views.scraper, name="scraper"),
 ]
 
 
