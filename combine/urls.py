@@ -19,10 +19,12 @@ urlpatterns = [
     path('mylist', views.mylist, name="mylist"),
     path('mylist/<int:id>', removeitem),
     
-    
     #flashcards
     path('upload', views.upload, name="upload"),
 
+    #documentscnaner
+    path('camera', views.camera, name="camera"),
+    path('documentscanner', views.documentscanner, name="documentscanner"),    
     #scraper
     path('scraper', views.scraper, name="scraper"),
 ]
