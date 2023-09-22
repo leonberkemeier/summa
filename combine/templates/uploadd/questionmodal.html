@@ -1,0 +1,347 @@
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+            display: flex;
+            justify-content: center;
+            align-items: flex;
+            background: rgb(112, 116, 135);
+            /* background: linear-gradient(to right, #333399, #ff00cc) */
+        }
+        
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: flex;
+        margin-top: 900px;
+        flex-direction: column;
+        position: absolute;
+        background: var(--bgclr);
+        height: 98%;
+        width: 90%;
+        border-radius: 20px;
+        margin-top:  0px;
+        margin-left: 0px;
+        
+    }
+    .modal{
+        display: flex;
+        height:100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .modal-head{
+        
+        margin: 2%;
+        height: 4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: white;
+        background: var(--bgclr);
+        
+    }
+    .modal-body{
+        width: 98%;
+        height: 90%;
+        /* margin: 10px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid black;
+        background: var(--bgclr);
+
+    }
+    .modal-footer{
+        width: 95%;
+        height: 12%;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border-top: 1px solid black; */
+        background: var(--bgclr);
+    }
+    .quit-button{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: rgb(177, 176, 176, 0.3);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transform-origin: top center;
+    text-align: center;
+    font-size: 40px;
+    left: 10px;
+    top: 10px;
+    /* outline: 1px ridge rgb(84, 83, 83); */
+    cursor: pointer; 
+    opacity: 1;
+    color: white;
+    outline: 3px outset rgb(29, 179, 29);
+   
+
+    }
+    .quit-button:hover{
+        filter: drop-shadow(0 0 5px rgba(7, 245, 7));
+    }
+    
+#frontcard {
+     
+  position: absolute;
+  
+  margin-top: 1%;
+  margin-left: 5%;
+  height:75%;
+  width: 100%;
+
+  opacity: 1;
+}
+
+#backcard {
+     
+  position: absolute;
+
+  margin-top: 1%;
+  margin-left: 5%;
+  height:75%;
+  width: 100%; 
+  
+  opacity: .0;
+    }
+.modal-picsize{
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+}
+#frontbtn{
+    opacity: 1;
+    background: #3e3ebd ;
+    border-radius: 30px;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+    color: white;
+    font-size: 20px;
+    outline: 3px outset rgb(29, 179, 29);
+   
+}
+#backbtn{
+    opacity: .3;
+    background: #ac018a;
+    border-radius: 30px;
+    height: 80px;
+    width: 80px;
+    color: white;
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+    font-size: 20px;
+    outline: 3px outset rgb(29, 179, 29);
+   
+}
+.buttonprev{
+    background: rgb(126, 119, 119);
+    color: black;
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+    color: white;
+    opacity: 1;
+    font-size: 20px;
+    outline: 3px outset rgb(29, 179, 29);
+   
+}
+.buttonnext{
+    background: rgb(126, 119, 119);
+    color: black;
+    /* height: var(--btnh);
+    width: var(--btnw); */
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+    color: white;
+    font-size: 20px;
+
+    transform-origin: top center;
+    outline: 3px outset rgb(29, 179, 29);
+   
+}
+.icccon{
+    font-size: 35px;
+}
+.bxns{
+    opacity: 1;
+    font-size: 20px;
+
+}
+@media (max-width:1000px){
+    .bxns{
+        opacity: 0;
+    }
+    .icccon{
+        margin-top: 20px;
+    }
+    .quit-button{
+        height: 150px;
+        width: 150px;
+        font-size: 80px;
+    }
+    .buttonnext{
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    border-radius: 40%;       
+    }
+    .buttonprev{
+        width: 150px;
+        height: 150px;
+        font-size: 80px;
+        border-radius: 40%;
+    }
+    #backbtn{
+        width: 150px;
+        height: 150px;
+        font-size: 80px;
+        border-radius: 40%;
+    }
+    #frontbtn{
+        width: 150px;
+        height: 150px;
+        font-size: 80px;
+        border-radius: 40%;
+    }
+    .icccon{
+        font-size: 90px;
+    }
+}
+
+</style>
+<body style="--btnh:80px; --btnw:70px; --bgclr:rgb(50,50,50)">
+   
+<div  class="center">
+    <div class="modal">
+<div class="modal-head">
+    {{questioncard.title}}
+    <!-- <div class="quit-button">
+        <a href="card">
+            <button type="button" class="btn btn-danger">
+                x
+            </button>
+        </a>
+    </div> -->
+</div>
+
+<div class="modal-body">
+    
+<!-- image size from phone is 3k x 4k px -->
+
+<div id="frontcard">
+{% if questioncard.front %}
+<img src="{{questioncard.front.url}}" class="modal-picsize" alt="{{questioncard.title}}">
+{% endif %}
+</div>
+
+<div id="backcard">
+{% if questioncard.back %}
+<img src="{{questioncard.back.url}}" class="modal-picsize" alt="{{questioncard.title}}">
+{% endif %}
+</div>
+</div>
+
+<div class="modal-footer">
+ 
+    <a  href="/myprojects/{{questioncard.side}}/quest?before={{questioncard.id}}">
+        <button id="backwardsbtn" class="buttonprev">
+            <ion-icon class="icccon" name="play-back-outline"></ion-icon> <h1 class="bxns">(j)</h1>
+        </button>
+    </a>
+
+<button id="backbtn" onclick="changeOpacity()">
+    <ion-icon class="icccon" name="arrow-down-circle-outline"></ion-icon> <h1 class="bxns">(f)</h1>
+</button>
+<button id="frontbtn" onclick="changeBack()">
+    <ion-icon class="icccon" name="arrow-up-circle-outline"></ion-icon> <h1 class="bxns">(b)</h1>
+</button>
+
+
+
+<a  href="/myprojects/{{questioncard.side}}/quest?after={{questioncard.id}}" class="buttonnext">
+    <button id="forwardbtn" class="buttonnext">
+        <ion-icon class="icccon" name="play-forward-outline"></ion-icon> <h1 class="bxns">(l)</h1>
+    </button>
+</a>
+</div>
+</div>
+</div>
+<div>
+    <a href="/myprojects" > 
+        <button id="quitbtn" class="quit-button">
+            <ion-icon name="arrow-undo-outline"></ion-icon>
+        </button>    
+    </a>
+
+</div>
+
+
+<script>
+    function changeOpacity() {
+      document.getElementById("frontcard").style.opacity = "0";
+      document.getElementById("backcard").style.opacity = "1";
+    
+      document.getElementById("frontbtn").style.opacity = "0.3";
+      document.getElementById("backbtn").style.opacity = "1";
+        
+    }
+    function changeBack() {
+      document.getElementById("frontcard").style.opacity = "1";
+      document.getElementById("backcard").style.opacity = "0";
+    
+      document.getElementById("frontbtn").style.opacity = "1";
+      document.getElementById("backbtn").style.opacity = "0.3 ";
+        
+    }
+    document.addEventListener("keydown", e =>{
+        if (e.key.toLowerCase() === "l"){
+            document.getElementById('forwardbtn').click();
+        }
+    });
+        document.addEventListener("keydown", e =>{
+        if (e.key.toLowerCase() === "j"){
+            document.getElementById('backwardsbtn').click();
+        }
+    });
+    document.addEventListener("keydown", e =>{
+        if (e.key.toLowerCase() === "b"){
+            document.getElementById('backbtn').click();
+        }   
+    });
+    document.addEventListener("keydown", e =>{
+        if (e.key.toLowerCase() === "f"){
+            document.getElementById('frontbtn').click();
+        }
+    });
+    document.addEventListener("keydown", e =>{
+        if (e.key.toLowerCase() === "x"){
+            document.getElementById('quitbtn').click();
+        }
+    });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>

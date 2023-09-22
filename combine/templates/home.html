@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fourth</title>
+    <title>Leon Berkemeier</title>
     <link rel="stylesheet" href="{% static 'home.css' %}">
     <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
     
@@ -114,27 +114,28 @@
             <h6>In the following I want to give the <span>Reader</span> a list of Projects I finished.</h6>
         </div>
         <div class="content">
+            
             <div class="cols">
                 <ul class="project__list">
 
                     <li class="project_list_item">
                         <p><b>My</b> first project was a basic to-do-list, which was designed to be a Mischung aus shopping und to-do-list.</p>
-                        <a href="#">mehr</a>  
+                        <button class="show-modal">click here to view my project</button> 
                     </li>
 
                     <li class="project_list_item">
                         <p><b>The</b> second project was a flash-card-style web application in which you were supposed to be able to create projects and to upload flash-cards ment for learning new skills. Additionally I added a document-scanner using CV2.</p>
-                    <a href="#">mehr</a>  
+                        <button class="show-modal1">click here to view my project1</button> 
                     </li>
 
                     <li class="project_list_item">
                         <p><b>Third</b> project was a Web-Scraping tool in which I used Scrapy. It was to yield prices and if a big Sale was to send me an Email.</p>
-                        <a href="#">mehr</a>  
+                        <button class="show-modal2">click here to view my project2</button> 
                     </li>
 
                     <li class="project_list_item">
                         <p><b>Fourth</b> was this website in which I wanted to display my skill, projects and combine all past projects into one big project.</p>
-                        <a href="#">mehr</a>  
+                        <button class="show-modal3">click here to view my project3</button>  
                     </li>
                 </ul>
 
@@ -156,6 +157,66 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+            <h1>This is Project 0</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum.
+            </p>
+            <br>
+            <a href="">link to project</a>
+          </div>
+    
+        <div class="modal1 hidden">
+          <button class="close-modal1">&times;</button>
+          <h1>This is Project 1</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+          <a href="">link to project</a>
+        </div>
+        <div class="modal2 hidden">
+          <button class="close-modal2">&times;</button>
+          <h1>This is Project 2</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+          <a href="">link to project</a>
+        </div>
+        <div class="modal3 hidden">
+          <button class="close-modal3">&times;</button>
+          <h1>This is Project 3</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>  
+    
+        <div class="overlay hidden"></div>
     </section>
 
 
@@ -405,8 +466,8 @@
     <!-- --- end image slider --- -->
             <div class="photography-txt">
                 <div class="txtt">
-                    <h6>If you like these pictures already feel free to check out my instagram and my VSCO for further pictures. </h6>
-            
+                    <h6>If you like these pictures already feel free to check out my <a href="http://instagram.com/leonberkemeier"><span>Instagram</span></a> and my <a href="https://vsco.co/leonberkemeier/gallery"><span>VSCO</span></a> for further pictures. </h6>
+                    
                 </div>
             </div>  
 
@@ -509,6 +570,134 @@ if(navClose){
      navMenu.classList.remove('show-menu')
  })
 };
+
+
+// ====== Modals ===========
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
+
+const openModal = function () {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+  };
+
+const closeModal = function () {
+modal.classList.add('hidden');
+overlay.classList.add('hidden');
+};
+
+for (let i = 0; i < btnsOpenModal.length; i++)
+  btnsOpenModal[i].addEventListener('click', openModal);
+
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+
+document.addEventListener('keydown', function (e) {
+    // console.log(e.key);
+  
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+
+  // second modal 
+
+  const modal1 = document.querySelector('.modal1');
+  const btnCloseModal1 = document.querySelector('.close-modal1');
+  const btnsOpenModal1 = document.querySelectorAll('.show-modal1');
+  
+  const openModal1 = function () {
+      modal1.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+    };
+  
+  const closeModal1 = function () {
+  modal1.classList.add('hidden');
+  overlay.classList.add('hidden');
+  };
+  
+  for (let i = 0; i < btnsOpenModal1.length; i++)
+    btnsOpenModal1[i].addEventListener('click', openModal1);
+  
+  btnCloseModal1.addEventListener('click', closeModal1);
+  overlay.addEventListener('click', closeModal1);
+  
+  
+  document.addEventListener('keydown', function (e) {
+      // console.log(e.key);
+    
+      if (e.key === 'Escape' && !modal1.classList.contains('hidden')) {
+        closeModal1();
+      }
+    });  
+
+  // third
+
+  const modal2 = document.querySelector('.modal2');
+  const btnCloseModal2 = document.querySelector('.close-modal2');
+  const btnsOpenModal2 = document.querySelectorAll('.show-modal2');
+  
+  const openModal2 = function () {
+      modal2.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+    };
+  
+  const closeModal2 = function () {
+  modal2.classList.add('hidden');
+  overlay.classList.add('hidden');
+  };
+  
+  for (let i = 0; i < btnsOpenModal2.length; i++)
+    btnsOpenModal2[i].addEventListener('click', openModal2);
+  
+  btnCloseModal2.addEventListener('click', closeModal2);
+  overlay.addEventListener('click', closeModal2);
+  
+  
+  document.addEventListener('keydown', function (e) {
+      // console.log(e.key);
+    
+      if (e.key === 'Escape' && !modal2.classList.contains('hidden')) {
+        closeModal2();
+      }
+    });
+
+
+  // fourth
+
+  const modal3 = document.querySelector('.modal3');
+  const btnCloseModal3 = document.querySelector('.close-modal3');
+  const btnsOpenModal3 = document.querySelectorAll('.show-modal3');
+  
+  const openModal3 = function () {
+      modal3.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+    };
+  
+  const closeModal3 = function () {
+  modal3.classList.add('hidden');
+  overlay.classList.add('hidden');
+  };
+  
+  for (let i = 0; i < btnsOpenModal3.length; i++)
+    btnsOpenModal3[i].addEventListener('click', openModal3);
+  
+  btnCloseModal3.addEventListener('click', closeModal3);
+  overlay.addEventListener('click', closeModal3);
+  
+  
+  document.addEventListener('keydown', function (e) {
+      // console.log(e.key);
+    
+      if (e.key === 'Escape' && !modal3.classList.contains('hidden')) {
+        closeModal3();
+      }
+    });
 
 
 // ====== Collapsibles =====
