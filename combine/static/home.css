@@ -593,9 +593,9 @@ span{
 
   
   .modal {
-    position: absolute;
-    top: 45%;
-    left: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;  
     transform: translate(-50%, -50%);
     width: 70%;
     
@@ -606,12 +606,12 @@ span{
     z-index: 10;
   }
   .modal1 {
-    position: absolute;
-    top: 55%;
-    left: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;  
     transform: translate(-50%, -50%);
     width: 70%;
-        
+    
     background-color: white;
     padding: 6rem;
     border-radius: 5px;
@@ -619,9 +619,9 @@ span{
     z-index: 10;
   }
   .modal2 {
-    position: absolute;
-    top: 65%;
-    left: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;  
     transform: translate(-50%, -50%);
     width: 70%;
     
@@ -632,8 +632,8 @@ span{
     z-index: 10;
   }
   .modal3 {
-    position: absolute;
-    top: 75%;
+    position: fixed;
+    top: 50%;
     left: 50%;  
     transform: translate(-50%, -50%);
     width: 70%;
@@ -693,7 +693,7 @@ span{
   }
   
   .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -1454,7 +1454,7 @@ span{
         width: 60px;
     }
     .projects .content .cols ul{
-        list-style: none;
+        list-style-type: circle;
     }
     
     .project_list_item{
