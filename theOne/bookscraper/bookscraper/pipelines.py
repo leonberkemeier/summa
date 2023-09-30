@@ -111,20 +111,27 @@ class SqlitePipeline:
 
     def __init__(self):
         #create/connect to db
-        self.con = sqlite3.connect('../../../../db.sqlite3')
+        self.con = sqlite3.connect('../../../db.sqlite3')
         #create cursor 
         self.cur = self.con.cursor()
         
         # create table if none exist
         self.cur.execute("""
-        CREATE TABLE IF NOT EXISTS rootapp_book(
+        CREATE TABLE IF NOT EXISTS combine_book(
             id INTEGER PRIMARY KEY, 
-            name TEXT,
-            price TEXT,
-            time TIMESTAMP
-            
+            name TEXT
         )
-        """)  
+        """)
+
+        # self.cur.execute("""
+        # CREATE TABLE IF NOT EXISTS combine_scrape(
+        #     id INTEGER PRIMARY KEY, 
+        #     name TEXT,
+        #     price TEXT,
+        #     time TIMESTAMP
+            
+        # )
+        # """)    
 
 
     ##### USE  time TIMESTAMP for time INT 
@@ -132,6 +139,14 @@ class SqlitePipeline:
 
         #drop tables to drop tables
            
+        # self.cur.execute("""
+        # DROP TABLE combine_book;
+        # """)
+
+        # self.cur.execute("""
+        # DROP TABLE combine_scrape;
+        # """)
+
         # self.cur.execute("""
         # DROP TABLE rootapp_book;
         # """)
@@ -222,12 +237,11 @@ class SqlitePipeline:
         
            
         self.cur.execute("""
-            INSERT INTO rootapp_book (name, price, time) VALUES (?, ?, ?)
+            INSERT INTO combine_book (name, price, time) VALUES (?)
         """,
         (
-            str(item['name']),        
-            str(item['price']),
-            time
+            str(item['name'])       
+           
             
             
             
