@@ -51,7 +51,7 @@
                 </ul>
                 <div class="nav__buttons">
                     <!-- <a href="#" class="nav__button-link">logins</a> -->
-                    <a href="#" class="nav__button-ghost">Lets Connect</a>
+                    <a href="#connect" class="nav__button-ghost">Lets Connect</a>
                 </div>
                 <!-- closebtn -->
                 <div class="nav__close" id="nav-close">
@@ -476,6 +476,35 @@
 
         
     </section>
+    <section class="connect view" id="connect">
+        <div class="main">
+            <h2><span>L</span>ets Connec<span>t</span></h2>
+            <h6>If you got any <span>Questions </span> let me know!</h6>
+       
+            <form action="" class="contact-form" id="contact-form">
+
+                <input type="text" placeholder="Your name" class="name" required>
+                <input type="email" name="" id="" placeholder="Email" class="email" required>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Write me a message ;)" class="message" required></textarea>
+                <input type="submit" value="Send" class="send-btn">
+
+            </form>
+        </div>
+    </section>
+    <!-- <section class="contact container" id="contact">
+        
+        <h2 class="heading">Contact</h2>
+
+        
+        <form action="" class="contact-form" id="contact-form">
+
+            <input type="text" placeholder="Your name" class="name" required>
+            <input type="email" name="" id="" placeholder="Email" class="email" required>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Write me a message ;)" class="message" required></textarea>
+            <input type="submit" value="Send" class="send-btn">
+
+        </form>
+    </section> -->
     
 
     <div class="icons">
@@ -731,6 +760,13 @@ var counter = 1;
         }, 5000);
 
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- email js link -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+        emailjs.init('Uc6RlC0v1cy7zI6s5')
+        </script>
 
     </body>
 </html>

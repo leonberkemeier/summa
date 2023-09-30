@@ -209,7 +209,7 @@ img{
         display: none;
     }
     .nav__menu{
-        width: 100%;
+        width: 76%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1911,6 +1911,51 @@ span{
         width: 80vw;
     }
     
+
+    /* ====== contact form ========== */
+    /* .message{
+        background: blue;
+    }
+    .name{
+        color: black;
+    } */
+    .contact-form{
+        max-width: 600px;
+        margin: auto;
+        width: 100%;
+        display: grid;
+        row-gap: 1rem;
+    }
+    .contact-form input,.contact-form textarea{
+        border: none;
+        outline: none;
+        font-size: .9rem;
+        padding: 15px;
+        color: white;
+        background: rgb(43, 43, 107);
+        border-radius: .4rem;
+    
+    
+    }
+    
+    .main .contact-form .send-btn{
+        width: 120px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+        background: rgb(94, 86, 245);
+        cursor: pointer;
+    
+    }
+    .send-btn{
+        width: 120px;
+        background:blue;
+        cursor: pointer;
+    }
+    .contact-form .send-btn:hover{
+        background: #546eff;
+        transition: .3s all linear;
+    }
     /* ====== css for footer ======== */
     
     footer{

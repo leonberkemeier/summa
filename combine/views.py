@@ -1,19 +1,18 @@
 from django.shortcuts import render, redirect
 from . models import ShoppingItem
 from django.http import StreamingHttpResponse
-import cv2
-import threading
 from django.shortcuts import render, redirect
 from . models import ProjectItem
 from django.core.files.storage import FileSystemStorage
 from . forms import CardForm
 from . models import Card
+from . models import Book
 import os
 from django.views.generic import TemplateView, ListView, CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+import pandas as pd
 # Create your views here.
 
 
@@ -91,6 +90,45 @@ def documentscanner(request):
 ####################################
 def scraper(request):
     return render(request, 'scraper.html')
+
+def chart(request):
+    data = Book.objects.all()
+    
+    df = pd.DataFrame(data)
+
+    noDuplicateRows = df.drop_duplicates()
+
+    # noDuplicateNames = df.drop_duplicates(subset=['name'])
+
+    
+    # after=request.GET.get('after', None)
+    # before=request.GET.get('before', None)
+
+    # rdata = Book.objects.filter(name=True).order_by('-id')[0]
+    # rdata = Book.objects.reverse()[0]
+
+    rdata = Book.objects.order_by('-id')
+    ldata = Book.objects.order_by('-id')[0]
+    context={
+        'rdata': rdata,
+        'data':data,
+        'ldata':ldata,
+        'df':df.to_html(),
+        'noDuplicateRows' : noDuplicateRows,
+        
+    }
+   
+    return render(request, "chunkychart.html",context)
+# # to remove duplicate data and create a list of items to choose which item to display
+# https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html
+
+# to display the scraped data create a new html document
+# display all the data set with all should be a thing
+
+# to display individual item types you have to filter
+# by a variable chooseable frome the no duplicate names list would be ideal
+# https://docs.djangoproject.com/en/4.2/topics/db/queries/
+
 ####################################
 
 
