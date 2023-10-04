@@ -116,17 +116,26 @@ class SqlitePipeline:
         self.cur = self.con.cursor()
         
         # create table if none exist
-        self.cur.execute("""
-        CREATE TABLE IF NOT EXISTS combine_book(
-            id INTEGER PRIMARY KEY, 
-            name TEXT,
-            price TEXT,
-            time TIMESTAMP
+        # self.cur.execute("""
+        # CREATE TABLE IF NOT EXISTS combine_book(
+        #     id INTEGER PRIMARY KEY, 
+        #     name TEXT,
+        #     price TEXT,
+        #     time TIMESTAMP
             
+        # )
+        # """)  
+
+        self.cur.execute("""
+        CREATE TABLE IF NOT EXISTS combine_scraper(
+            id INTEGER PRIMARY KEY, 
+            name TEXT NOT NULL UNIQUE,
+            intro TIMESTAMP            
         )
-        """)  
+        """) 
 
-
+        
+        
     ##### USE  time TIMESTAMP for time INT 
 
 
@@ -134,6 +143,10 @@ class SqlitePipeline:
            
         # self.cur.execute("""
         # DROP TABLE rootapp_book;
+        # """)
+
+        # self.cur.execute("""
+        # DROP TABLE combine_scraper;
         # """)
 
 
@@ -221,17 +234,29 @@ class SqlitePipeline:
             # return item
         
            
+        # self.cur.execute("""
+        #     INSERT INTO combine_book (name, price, time) VALUES (?, ?, ?)
+        # """,
+        # (
+        #     str(item['name']),        
+        #     str(item['price']),
+        #     time
+            
+            
+            
+        # ))
+
         self.cur.execute("""
-            INSERT INTO combine_book (name, price, time) VALUES (?, ?, ?)
+            INSERT INTO combine_scraper (name, intro) VALUES (?, ?)
         """,
         (
-            str(item['name']),        
-            str(item['price']),
+            str(item['name']), 
             time
             
             
             
         ))
+
 
         self.con.commit()
         return item
