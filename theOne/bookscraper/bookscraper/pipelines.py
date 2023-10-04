@@ -116,22 +116,32 @@ class SqlitePipeline:
         self.cur = self.con.cursor()
         
         # create table if none exist
-        self.cur.execute("""
-        CREATE TABLE IF NOT EXISTS combine_book(
-            id INTEGER PRIMARY KEY, 
-            name TEXT
-        )
-        """)
+        # self.cur.execute("""
+        # CREATE TABLE IF NOT EXISTS combine_book(
+        #     id INTEGER PRIMARY KEY, 
+        #     name TEXT NOT NULL UNIQUE
+        # )
+        # """)
 
         # self.cur.execute("""
         # CREATE TABLE IF NOT EXISTS combine_scrape(
         #     id INTEGER PRIMARY KEY, 
-        #     name TEXT,
+        #     name TEXT NOT NULL UNIQUE,
         #     price TEXT,
         #     time TIMESTAMP
             
         # )
-        # """)    
+        # """)
+        self.cur.execute("""
+        CREATE TABLE IF NOT EXISTS combine_scrapers(
+            id INTEGER PRIMARY KEY, 
+            name TEXT NOT NULL UNIQUE,
+            intro TIMESTAMP
+        )
+        """)
+
+        
+            
 
 
     ##### USE  time TIMESTAMP for time INT 
@@ -144,7 +154,7 @@ class SqlitePipeline:
         # """)
 
         # self.cur.execute("""
-        # DROP TABLE combine_scrape;
+        # DROP TABLE combine_scrapers;
         # """)
 
         # self.cur.execute("""
@@ -236,16 +246,45 @@ class SqlitePipeline:
             # return item
         
            
+        # self.cur.execute("""
+        #     INSERT INTO combine_book (name) VALUES (?)
+        # """,
+        # (
+        #     str(item['name'])                  
+        # ))
+
+        # self.cur.execute("""
+        #     INSERT INTO combine_scrape (name, price, time) VALUES (?, ?, ?)
+        # """,
+        # (
+        #     str(item['name']),        
+        #     str(item['price']),
+        #     time
+            
+            
+            
+        # ))
+
         self.cur.execute("""
-            INSERT INTO combine_book (name, price, time) VALUES (?)
+            INSERT INTO combine_scrapers (name, intro) VALUES (?, ?)
         """,
         (
-            str(item['name'])       
-           
-            
+            str(item['name']),
+            time      
             
             
         ))
+
+
+        # self.cur.execute("""
+        #     INSERT INTO combine_scraper (name) VALUES (?)
+        # """,
+        # (
+        #     str(item['name'])
+            
+            
+            
+        # ))
 
         self.con.commit()
         return item
