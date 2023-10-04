@@ -10,7 +10,7 @@
     /* --title-color: #7b1ea5; */
     --text-color: rgb(29, 38, 47);
     --white-color: #fff;
-    --body-color: rgb(5, 10, 58);
+    --body-color: rgb(52, 51, 51);
 
     /* --nav-color: rgb(53, 47, 96); */
 
@@ -420,7 +420,7 @@ img{
 
 }
 button:hover{
-    background-color: rgb(127, 0, 255);
+    background-color: var(--lighter-color);
 
 }
 
@@ -553,41 +553,42 @@ span{
   }
 .show-modal{
     position: relative;
-    height: 80px;
-    width: 200px;
+    margin: 10px;
+    height: 60px;
+    width: 150px;
     border-radius: 10px;
     cursor: pointer;
-    background: rgb(40, 180, 135,.5);
+    background: var(--title-color);
     color: white;
 }
 .show-modal1{
   position: relative;
-  
-  height: 80px;
-  width: 200px;
+  margin: 10px;
+  height: 60px;
+  width: 150px;
   border-radius: 10px;
   cursor: pointer;
-  background: rgb(40, 180, 135,.5);
+  background: var(--title-color);
   color: white;
 }
 .show-modal2{
   position: relative;
-  
-  height: 80px;
-  width: 200px;
+  margin: 10px;
+  height: 60px;
+  width: 150px;
   border-radius: 10px;
   cursor: pointer;
-  background: rgb(40, 180, 135,.5);
+  background: var(--title-color);
   color: white;
 }
 .show-modal3{
   position: relative;
-  
-  height: 80px;
-  width: 200px;
+  margin: 10px;
+  height: 60px;
+  width: 150px;
   border-radius: 10px;
   cursor: pointer;
-  background: rgb(40, 180, 135,.5);
+  background: var(--title-color);
   color: white;
 }
 
@@ -808,7 +809,7 @@ span{
     justify-content: center;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: justify;
     /* margin: 10%; */
     
 }
@@ -1584,195 +1585,7 @@ span{
         margin: 10px;
     }
     
-    /* ---- skills page ----- */
     
-    .progressBoxs{
-        gap: 3rem;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        /* margin: 10%; */
-        
-    }
-    .grid{
-        width: 100%;
-        height: 105vh;
-        position: relative;
-        display: flex; 
-        flex-direction: row;   
-        padding: 0 30px;
-        justify-content: space-between;
-    }
-    .grid .grid_skills{
-        height: 100%;
-        width: 50%;
-        padding: 10px 0;
-        
-    }
-    .grid .grid_skills h1{
-        color: var(--white-color);
-        text-decoration: underline var(--title-color);
-    }
-    .grid .grid_courses h1{
-        color: var(--white-color);
-        text-decoration: underline var(--title-color);
-    }
-    .grid .grid_courses{
-        height: 100%;
-        width: 50%;
-        padding: 10px 0;
-        
-    }
-    
-    .skills h2 span{
-        color: var(--title-color);
-    }
-    .skills h6 span{
-        color: var(--title-color);
-    }
-    .skills span{
-        color: var(--white-color);
-    }
-    .skills .grid .progressBox h1{
-        color: var(--white-color);
-        text-transform: capitalize;
-        text-decoration: underline var(--title-color);
-    }
-    
-    
-    .skills .grid .grid_courses .collapsible .progress_name{
-        font-size: 20px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: 300;
-        color: white;
-        margin-bottom: 10px;
-    
-    }
-    .skills .grid .grid_skills .collapsible .progress_name{
-        font-size: 20px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: 300;
-        color: white;
-        margin-bottom: 10px;
-    
-    }
-    
-    .skills .grid .grid_courses .collapsible{
-        /* margin: 10px; */
-        border: 1px solid black;
-        width: 100%;
-        padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-        background-color: var(--coursenskills-color);
-        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
-    
-    }
-    .skills .grid .grid_skills .collapsible{
-        
-        /* margin: 10px; */
-        border: 1px solid black;
-        width: 100%;
-        padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-        background-color: var(--coursenskills-color);
-        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
-    
-    }
-    
-    
-    
-    .skills .grid .grid_courses .active, .collapsible:hover{
-        background-color: var(--lighter-color);
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        margin-bottom: 0;
-    }
-    .skills .grid .grid_skills .active, .collapsible:hover{
-        background-color: var(--lighter-color);
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        margin-bottom: 0;
-    }
-    .skills .grid .grid_courses .content{
-        padding: 0 18px;
-        display: none;
-        overflow: hidden;
-        background-color: var(--body-color);
-        border-bottom-right-radius: 10px ;
-        border-bottom-left-radius: 10px ;
-        width: 100%;
-        padding: 18px;
-        /* margin-left: 30px; */
-        background-color: var(--lighter-color);
-        border: 1px solid black;
-        color: white;
-    }
-    .skills .grid .grid_skills .content{
-        padding: 0 18px;
-        display: none;
-        overflow: hidden;
-        background-color: var(--body-color);
-        border-bottom-right-radius: 10px ;
-        border-bottom-left-radius: 10px ;
-        width: 100%;
-        padding: 18px;
-        /* margin: 10px; */
-        background-color: var(--lighter-color);
-        border: 1px solid black;
-        color: white;
-    }
-    .skills .grid .grid_courses .content h6{
-        text-transform: capitalize;
-        color: var(--body-color);
-    }
-    .skills .grid .grid_courses .content a{
-        text-decoration: underline;
-        color: darkblue;
-    }
-    
-    .skills .grid .courseItem{
-        margin: 30px;
-        
-    }
-    .skills .grid .skillsItem{
-        margin: 15px;
-        
-    }
-    
-    
-    
-    
-    .progress{
-        width: 100%;
-        height: 9px;
-        background-origin: blue;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-    .progress_bar{
-        height: 100%;
-        border-radius: 10px;
-        background-color: var(--title-color);
-        position: relative;
-        opacity: .7;
-        border: 1px solid black;
-    }
-    .progress_bar::after{
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: calc(100% - 7px);
-        transform: translateY(-50%);
-        height: 15px;
-        width: 15px;
-        background-color: var(--title-color);
-        border-radius: 50%;
-        border: 1px solid black;
-    }
     
     /*  photography css */
     
@@ -1922,6 +1735,7 @@ span{
     .contact-form{
         max-width: 600px;
         margin: auto;
+        margin-top: 20px;
         width: 100%;
         display: grid;
         row-gap: 1rem;
@@ -2226,6 +2040,40 @@ span{
     display: flex;
     justify-content: center;
     width: 80vw;
+}
+
+/* ====== contact form ========== */
+.contact-form{
+    max-width: 600px;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    row-gap: 1rem;
+}
+.contact-form input,.contact-form textarea{
+    border: none;
+    outline: none;
+    font-size: .9rem;
+    padding: 15px;
+    color: white;
+    background: var(--title-color);
+    border-radius: .4rem;
+
+
+}
+
+.contact-form .send-btn{
+    width: 120px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    background: var(--title-color);
+    cursor: pointer;
+
+}
+.contact-form .send-btn:hover{
+    background: var(--lighter-color);
+    transition: .3s all linear;
 }
 
 /* ====== css for footer ======== */

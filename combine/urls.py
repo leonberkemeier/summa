@@ -44,6 +44,7 @@ urlpatterns = [
     #scraper
     path('scraper', views.scraper, name="scraper"),
     path('chart', views.chart, name="chart"),
+    path('regroupbyhtml', views.regroupbyhtml, name="regroupbyhtml"),
 
 ]
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regroup By HTML</title>
+</head>
+<body>
+    <h1>hahaha</h1>
+
+{% regroup cities by country as countries_list %}
+
+<ul>
+    {% for country in countries_list %}
+        <li>{{ country.grouper }}
+            <ul>
+            {% for city in country.list %}
+                <li>{{ city.name }}: {{ city.population }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+{% regroup books by name as books_list %}
+
+<ul>
+    {% for book in books_list %}
+        <li>{{ book.grouper }}
+            <ul>
+            {% for name in book.list %}
+                <li>{{ name.name }}: {{ name.price }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

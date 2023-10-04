@@ -10,3 +10,9 @@ class CardForm(forms.ModelForm):
     class Meta:
         model = Card
         fields = ('title','front','back')
+
+# class ContactForm(forms.ModelForm):
+#     name = forms.CharField()
+#     email= forms.CharField()
+#     text= forms.CharField()
+

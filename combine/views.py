@@ -91,8 +91,19 @@ def documentscanner(request):
 def scraper(request):
     return render(request, 'scraper.html')
 
+def regroupbyhtml(request):
+    books = Book.objects.all()
+    context={
+        'books': books,
+    }
+    return render(request, 'regroupbyhtml.html', context)
+
 def chart(request):
     data = Book.objects.all()
+    books = Book.objects.all()
+    
+    query = Book.objects.all().query
+    query.group_by=['name']
     
     df = pd.DataFrame(data)
 
@@ -115,6 +126,7 @@ def chart(request):
         'ldata':ldata,
         'df':df.to_html(),
         'noDuplicateRows' : noDuplicateRows,
+        'books' : books,
         
     }
    
