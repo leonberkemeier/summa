@@ -12,8 +12,13 @@ urlpatterns = [
     path('', views.home, name="home"),
     
     # path('', views.loginPage, name="login"),
-    path('one', views.one),
-    # path('logout', views.logoutUser, name="logout"),
+    # path('one', views.one),
+    
+
+    #login
+    # path('login', views.login, name="login"),
+    path('login',views.loginPage, name="login"),
+    path('logout', views.logoutUser, name="logout"),
 
     #todolist
     path('mylist', views.mylist, name="mylist"),
@@ -26,7 +31,6 @@ urlpatterns = [
     path('myprojects/<int:id>/add',views.addtheproject, name="addtheproject"),
     path('myprojects/<int:id>/quest',views.questtheproject, name="questtheproject"),
     path('upload', views.upload, name="upload"),
-
     path('card_question', views.card_question, name="card_question"),
     path('card/',views.card_list, name="card_list"),
     path('card/upload/', views.upload_card, name="upload_card"), 
@@ -35,7 +39,7 @@ urlpatterns = [
 
     
     #flashcards
-    path('upload', views.upload, name="upload"),
+    # path('upload', views.upload, name="upload"),
 
     #documentscnaner
     path('camera', views.camera, name="camera"),

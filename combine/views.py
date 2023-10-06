@@ -23,6 +23,8 @@ def one(request):
     return render(request, "home2.html")
 
 
+
+@login_required(login_url='login')
 #####################################
 # first project todolist
 
@@ -40,7 +42,36 @@ def removeitem(request, * ,id):
     ShoppingItem.objects.filter(id=id).delete()
 
 ####################################
+def loginPage(request):
+    
+    if request.user.is_authenticated:
+        
+        return redirect('mylist')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            context={} 
+            user = authenticate(request, username=username, password = password)
 
+            if user is not None:
+                
+                login(request, user)
+                
+                return redirect('mylist')
+        
+            else:
+                
+                messages.info(request, 'Username OR Password is Incorrect')
+                return render(request, 'login.html', context)
+
+        context={} 
+         
+        return render(request, 'login.html', context)
+    
+def logoutUser(request):
+    logout(request)
+    return redirect ('login')
 
 #docuscanner
 ####################################
@@ -73,10 +104,11 @@ def removeitem(request, * ,id):
 #         frame = camera.get_frame()
 #         yield (b'--frame\r\n'
 #                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-
+@login_required(login_url='login')
 def camera(request):
     return render(request, 'camera.html')
 
+@login_required(login_url='login')
 def documentscanner(request):
 
     
@@ -88,6 +120,7 @@ def documentscanner(request):
 
 #scraper
 ####################################
+@login_required(login_url='login')
 def scraper(request):
     return render(request, 'scraper.html')
 
@@ -98,6 +131,7 @@ def regroupbyhtml(request):
     }
     return render(request, 'regroupbyhtml.html', context)
 
+@login_required(login_url='login')
 def chart(request):
     data = Book.objects.all()
     books = Book.objects.all()
@@ -149,6 +183,7 @@ def chart(request):
 def upload(request):
     return render(request,"upload.html")
 
+@login_required(login_url='login')
 def myprojects(request):
     if request.method == 'POST':  
         print('Received data: ', request.POST['itemName'])
